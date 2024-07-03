@@ -15,7 +15,6 @@ class Webtoon extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print('Take me homeee');
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -39,7 +38,7 @@ class Webtoon extends StatelessWidget {
                   boxShadow: [
                     BoxShadow(
                       blurRadius: 10,
-                      offset: Offset(10, 10),
+                      offset: const Offset(10, 10),
                       color: Colors.black.withOpacity(0.5),
                     )
                   ]),
@@ -56,7 +55,7 @@ class Webtoon extends StatelessWidget {
           ),
           Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 22,
             ),
           ),

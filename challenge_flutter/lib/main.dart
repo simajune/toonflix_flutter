@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  print(sayHello2(
-    name: 'tj',
-    age: 38,
-    country: 'Korea',
-  ));
-}
+void main() {}
 
 String sayHello(String name) {
   return 'Hello $name nice to meet you!';
@@ -44,3 +38,48 @@ ListOfInts reverseListOfNumbers(ListOfInts list) {
 }
 
 typedef ListOfInts = List<int>;
+
+class Player {
+  String name;
+  XPLevel xp;
+  Team team;
+
+  Player({
+    required this.name,
+    required this.xp,
+    required this.team,
+  });
+
+  Player.fromJson(Map<String, dynamic> json)
+      : name = json["name"],
+        xp = json["xp"],
+        team = json["team"];
+
+  void sayHello() {
+    print('Hi my name is $name');
+  }
+
+  void walk() {}
+}
+
+enum Team { red, blue }
+
+enum XPLevel {
+  beginner,
+  medium,
+  pro,
+}
+
+// abstract class Human {
+//   void walk();
+// }
+
+class Human {
+  final String name;
+
+  Human(this.name);
+
+  void sayHello() {
+    print('Hi my name is $name');
+  }
+}

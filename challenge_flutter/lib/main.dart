@@ -1,32 +1,34 @@
 import 'package:flutter/material.dart';
 
-class Human {
-  final String name;
+mixin class Strong {
+  final double strengthLevel = 1500.99;
+}
 
-  Human({required this.name});
-
-  void sayHello() {
-    print('Hi my name is $name');
+mixin class QuickRunner {
+  void runQuick() {
+    print('ruuuuuuuuun');
   }
+}
+
+mixin class Tall {
+  final double height = 1.99;
 }
 
 enum Team { red, blue }
 
-class Player extends Human {
+class Player with Strong, QuickRunner, Tall {
   final Team team;
 
   Player({
     required this.team,
     required String name,
-  }) : super(name: name);
-
-  @override
-  void sayHello() {
-    super.sayHello();
-    print('and I play for $team');
-  }
+  });
 }
 
-void main() {
-  var player = Player(team: Team.blue, name: 'tj');
-}
+class Horse with Strong, QuickRunner {}
+
+class Kid with QuickRunner {}
+
+void main() {}
+
+Stream<int> counterStream(int max) async {}
